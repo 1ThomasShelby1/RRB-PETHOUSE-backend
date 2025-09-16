@@ -9,11 +9,10 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(helmet());
 const corsOptions = {
-  origin: 'http://localhost:5173', // allow only local frontend
-  credentials: true,               // allow cookies/credentials
-  optionsSuccessStatus: 200        // handle legacy browsers
+  origin: process.env.FRONTEND_URL || "http://localhost:5173", // Use deployed frontend on Vercel
+  credentials: true, // Allow cookies/credentials
+  optionsSuccessStatus: 200, // Handle legacy browsers
 };
 
 app.use(cors(corsOptions));
