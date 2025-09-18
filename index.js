@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 
 
 const corsOptions = {
-  origin: ["http://localhost:5173"],  // list of allowed frontend URLs
+  origin: ["http://localhost:5173", "https://rrb-pethouse22.onrender.com"],  // list of allowed frontend URLs
   credentials: true,
   allowedHeaders: [
     "Content-Type",
